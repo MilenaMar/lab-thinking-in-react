@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import ProductRow from '../ProductRow/ProductRow'
+import './ProductTable.css'
 
 
 export default class ProductTable extends Component {
 render (){
     const product = this.props.data
     return (
-        <div>
+        <div className="producttable">
           <table>
           <thead>
          <tr>

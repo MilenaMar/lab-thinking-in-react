@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 import SearchBar from '../SearchBar/SearchBar.jsx'
 import ProductTable from '../ProductTable/ProductTable.jsx'
+import './FilterableProductTable'
 
 class FilterableProductTable extends Component {
   state = {
     search: "",
     products: this.props.products.data
 }
+
+
+
+componentDidMount(){}
 
 handleChange = (search) => {
   this.setState({
@@ -23,9 +28,9 @@ handleChange = (search) => {
     })
 
     return (
-      <div>
+      <div className="filtered">
         <h1>IronStore</h1>
-        <SearchBar products={this.state.products} change={this.handleChange} search={this.state.search}/>
+        <SearchBar products={this.state.products} handleChange={this.handleChange} search={this.state.search}/>
         <ProductTable data={productsafterSearch} />
       </div>
     )
