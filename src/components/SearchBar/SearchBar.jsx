@@ -2,35 +2,13 @@ import React, { Component } from 'react'
 
 class SearchBar  extends Component {
 
-  state = {
-    search:"",
-  }
-
- //handleChange= (event)=>{
- //  console.log("event:", event.target.name, ": ", event.target.value); 
- //  this.setState({[event.target.name]:event.target.value})
- //}
-
- render(
-
- // const filterSearch = this.state.questions.filter((el)=> { 
- //   return (
- //     el.question.toLowerCase().includes(this.state.search.toLocaleLowerCase()) ||
- //     el.author.toLocaleLowerCase().includes(this.state.search.toLocaleLowerCase())
- //   )
- //   })
-
-
- ){
-
+ render(){
     return (
     <div>
-      <input name="search" type="text" name="search" onChange={this.handleChange} placeholder="Enter input here"/>
+    <input type="text" name="search" value={this.props.search} onChange={(event) => this.props.change(event.target.value)} />
     </div>
   )
 }
-
-
 }
 
 export default SearchBar;
